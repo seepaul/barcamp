@@ -1,0 +1,3 @@
+[
+	{ "model": "User", "data": { "username": "barcamp", "firstName": "Max", "lastName": "Mustermann", "password": "test" } },
+]

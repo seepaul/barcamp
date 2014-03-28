@@ -1,0 +1,40 @@
+{ 
+  "general": {
+  "Websitename": "Barcamp",
+  "mail_contact": "name@mailprovider.com"
+  },
+"database": {
+  "host": "localhost",
+  "port": "5984",
+  "name": "your_db_name",
+  "username": "your_username",
+  "password": "your_password",
+  "options": {
+    "dialect": "mysql"
+    }
+  },
+  "database-version": "latest",
+  "fixtures-version": "latest",
+  "logger" : {
+    "clevel": "WARN",
+    "mlevel": "ERROR",
+    "appenders": [
+        { "type": "console", "category": "console"},
+        { "type": "file", "filename": "./barcamp.log", "category": "file" },
+        { "type": "smtp", "recipients": "name@mailprovider.com", "sendinterval": "5", "sender": "noreply@mailprovider.com", "transport": "SMTP", 
+            "SMTP": {
+                "host": "smtp.mailprovider.com",
+                "secureConnection": false,
+                "port": "587",
+                "auth": {
+                    "user": "noreply@mailprovider.com",
+                    "pass": "just2send"
+                },
+                "debug": false
+            },
+        "category": "mail"
+    }
+    ],
+    "replaceConsole": true
+  }
+}

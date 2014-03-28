@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Login - Matdb<% if(stagingEnvironment()) { %> (staging)<% } else if(developmentEnvironment()) { %> (development)<% } %></title>
+
+<% if(developmentEnvironment()) { %>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/simple-sidebar.css" rel="stylesheet">
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<link href="/css/main.css" rel="stylesheet">
+<% } else { %>
+  <link rel="stylesheet" href="/css/barcamp.min.css">
+<% } %>
+
+	</head>
+<body id="login">
+<div class="container">
+		<img id="logo" src="images/icon_and_wording529x160.png">
+    <form class="form-signin" method="post" action="/login" id="form-signin">
+         <h2 class="form-signin-heading">Please sign in</h2>
+         <label class="error"><b><%= message %></b></label>
+        <div class="control-group">
+            <label class="control-label" for="login">Login:</label>
+            <div class="controls">
+                <input size="50" name="username" id="login" value="" type="text" class="form-control" placeholder="Login">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="password">Password:</label>
+            <div class="controls">
+                <input size="50" name="password" id="password" value="" type="password" class="form-control" placeholder="Password">
+            </div>
+        </div>
+        <label class="checkbox">
+            <input type="checkbox" name="save" value="">Remember me</label>
+        <button name="submit" id="submit" value="Login" type="submit" class="btn btn-large btn-primary btn-block">Sign in</button>
+    </form>
+</div>
+
+    <% if(developmentEnvironment()) { %>
+      <script data-main="/js/main" src="/js/require.js"></script>
+      <script src="/js/config.js"></script>
+    <% } else { %>
+      <script data-main="/js/barcamp.min" src="/js/require.min.js"></script>
+    <% } %>
+</body>
+</html>
+

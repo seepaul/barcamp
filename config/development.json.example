@@ -1,0 +1,25 @@
+{
+ "logger" : {
+    "clevel": "DEBUG",
+    "mlevel": "WARN",
+    "appenders": [
+        { "type": "console", "category": "console"},
+        { "type": "file", "filename": "/home/user/Workspace/barcamp/barcamp.log", "category": "file" },
+       { "type": "smtp", "recipients": "user@mailprovider.com", "sendinterval": "5", "sender": "noreply@mailprovider.com", "transport": "SMTP", 
+            "SMTP": {
+                "host": "smtp.mailprovider.com",
+                "secureConnection": false,
+                "port": "587",
+                "auth": {
+                    "user": "noreply@mailprovider.com",
+                    "pass": "just2send"
+                },
+                "debug": true
+            },
+        "category": "mail"
+    }
+    ],
+    "replaceConsole": true
+  },
+  "database-version": "latest"
+}

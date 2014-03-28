@@ -1,0 +1,56 @@
+{
+  "name": "Barcamp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node barcamp-server.js"
+  },
+  "engines": {
+    "node": "0.10.17",
+    "npm": "1.3.8"
+  },
+  "dependencies": {
+    "express": "3.x.x",
+    "ejs": "0.x.x",
+    "mysql": "2.x.x",
+    "sequelize": "2.x.x",
+    "config": "0.x.x",
+    "log4js": "0.x.x",
+    "nodemailer": "0.x.x",
+    "passport": "0.x.x",
+    "passport-local": "0.x.x",
+    "connect-ensure-login": "0.x.x",
+    "async": "0.x.x",
+    "sequelize-fixtures": "0.x.x",
+    "express-domain-middleware": "0.x.x",
+    "connect-flash": "~0.1.1"
+  },
+  "devDependencies": {
+    "less": "1.x.x",
+    "grunt": "0.x.x",
+    "grunt-contrib-jshint": "0.x.x",
+    "grunt-contrib-uglify": "0.x.x",
+    "grunt-git-deploy": "0.x.x",
+    "grunt-contrib-requirejs": "0.x.x",
+    "grunt-css": "0.x.x",
+    "grunt-shell": "0.x.x",
+    "grunt-yui-compressor": "0.x.x",
+    "grunt-htmlcompressor": "0.x.x",
+    "grunt-minjson": "0.x.x",
+    "grunt-mocha": "0.x.x",
+    "grunt-shell-spawn": "0.x.x",
+    "grunt-jslint": "1.x.x"
+  },
+  "author": {
+    "name": "Paul Rudolf Seebacher",
+    "email": "mail@seepaul.org"
+  },
+  "description": "",
+  "keywords": [
+    ""
+  ],
+  "bugs": {
+    "web": "null"
+  },
+  "main": "barcamp-server.js"
+}

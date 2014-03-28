@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Barcamp Tagcloud<% if(stagingEnvironment()) { %> (staging)<% } else if(developmentEnvironment()) { %> (development)<% } %></title>
+
+<% if(developmentEnvironment()) { %>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<link href="/css/main.css" rel="stylesheet">
+<% } else { %>
+  <link rel="stylesheet" href="/css/barcamp.min.css">
+<% } %>
+  </head>
+
+  <body>
+  <div class="container">
+  <form class="form-horizontal" method="post" action="/form" id="form-add">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Add to tagcloud</legend>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="tag1">#1</label>
+  <div class="controls">
+    <input id="tag1" name="tag1" placeholder="first tag" class="input-xlarge" required="" type="text">
+    <p class="help-block">please reconsider input</p>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="tag2">#2</label>
+  <div class="controls">
+    <input id="tag2" name="tag2" placeholder="second tag" class="input-xlarge" type="text">
+    <p class="help-block">please reconsider input</p>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="tag3">#3</label>
+  <div class="controls">
+    <input id="tag3" name="tag3" placeholder="third tag" class="input-xlarge" type="text">
+    <p class="help-block">please reconsider input</p>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="control-group">
+  <label class="control-label" for="submit"></label>
+  <div class="controls">
+    <button id="submit" name="submit" class="btn btn-success">Ok</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    <% if(developmentEnvironment()) { %>
+      <script data-main="/js/main" src="/js/require.js"></script>
+      <script src="/js/config.js"></script>
+    <% } else { %>
+      <script data-main="/js/barcamp.min" src="/js/require.min.js"></script>
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+[
+  { "model": "Tag", "data": { "name": "webdev", "count": "20"} },
+  { "model": "Tag", "data": { "name": "ios", "count": "50"} },
+  { "model": "Tag", "data": { "name": "android", "count": "30"} },
+  { "model": "Tag", "data": { "name": "agile", "count": "5"} },
+  { "model": "Tag", "data": { "name": "responsive", "count": "100"} },
+]
