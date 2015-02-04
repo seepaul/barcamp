@@ -4,9 +4,19 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
   'use strict';
 
   $(document).ready(function () {
+
     jQuery.validator.addMethod("lettersonly", function (value, element) {
       return this.optional(element) || /^[a-z0-9_\-]+$/i.test(value);
     }, "Please use only a-z0-9_-");
+
+    jQuery.validator.addMethod("tag", function (value, element) {
+      return this.optional(element) || /^[a-zA-Z0-9_\- ]+$/i.test(value);
+    }, "Please use only a-zA-Z0-9_- ");
+
+    jQuery.validator.addMethod("validName", function (value, element) {
+      return this.optional(element) || /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'\-]+$/i.test(value);
+    }, "String contains not supported characters");
+
     $('#form-signin').validate({
       rules: {
         username: {
@@ -59,6 +69,39 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
       height: $(window).height() - 100,
       sizemax: 100,
       type: 'sphere'
+    });
+
+    $("body#register form").validate({
+      rules: {
+        firstName: {
+          minlength: 2,
+          maxlength: 36,
+          required: true,
+          validName: true
+        },
+        lastName: {
+          minlength: 2,
+          maxlength: 36,
+          required: true,
+          validName: true
+        },
+        email: {
+          email: true,
+          required: true
+        },
+        tag1: {
+          required: true,
+          tag: true
+        },
+        tag2: {
+          required: true,
+          tag: true
+        },
+        tag3: {
+          required: true,
+          tag: true
+        }
+      }
     });
 
   });

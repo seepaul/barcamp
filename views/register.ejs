@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Barcamp Tagcloud<% if(stagingEnvironment()) { %> (staging)<% } else if(developmentEnvironment()) { %> (development)<% } %></title>
+
+<% if(developmentEnvironment()) { %>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<link href="/css/main.css" rel="stylesheet">
+<% } else { %>
+  <link rel="stylesheet" href="/css/barcamp.min.css">
+<% } %>
+  </head>
+
+  <body id="register">
+  <div class="container">
+
+
+			<div class="page-header">
+				<h1>BarCamp Anmeldung</h1>
+			</div>
+
+
+			<form novalidate="novalidate" class="form-horizontal" method="POST" action="#">
+
+				<fieldset>
+
+      <div class="row">
+        <div class="col-sm-7 col-xs-7">
+
+          
+
+					<div class="form-group row">
+						<label class="control-label col-lg-4" for="firstName">Vorname</label>
+						<div class="controls col-lg-7">
+							<input class="form-control" id="firstName" name="firstName" value="" type="text">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="control-label col-lg-4" for="lastName">Nachname</label>
+						<div class="controls col-lg-7">
+							<input class="form-control" id="lastName" name="lastName" value="" type="text">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="control-label col-lg-4" for="email">E-mail</label>
+						<div class="controls col-lg-7">
+							<input class="form-control" id="email" name="email" value="" type="text">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="control-label col-lg-4" for="tag1">Tag 1</label>
+						<div class="controls col-lg-7">
+							<input class="form-control" id="tag1" name="tag1" value="" type="text">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="control-label col-lg-4" for="tag2">Tag 2</label>
+						<div class="controls col-lg-7">
+							<input class="form-control" id="tag2" name="tag2" value="" type="text">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="control-label col-lg-4" for="tag3">Tag 3</label>
+						<div class="controls col-lg-7">
+							<input class="form-control" id="tag3" name="tag3" value="" type="text">
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="control-label col-lg-4" for="remind">Erinnerungsemail?</label>
+						<div class="controls col-lg-7">
+							<input class="form-control" id="remind" name="remind" type="checkbox">
+						</div>
+					</div>
+<hr/>
+					<div class="form-actions row">
+						<div class="col-lg-4" style="text-align:right"><input id="register" class="btn btn-success btn-large" value="Zum BarCamp anmelden" type="submit"></div><div class="col-lg-7"><a class="btn" href="http://barcamp-graz.at/">Abbrechen</a></div>
+					</div>
+
+ </div>
+
+
+				</fieldset>
+			</form>
+
+      
+</div>
+    <% if(developmentEnvironment()) { %>
+      <script data-main="/js/main" src="/js/require.js"></script>
+      <script src="/js/config.js"></script>
+    <% } else { %>
+      <script data-main="/js/barcamp.min" src="/js/require.min.js"></script>
+    <% } %>
+  </body>
+</html>

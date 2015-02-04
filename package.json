@@ -23,7 +23,9 @@
     "async": "0.x.x",
     "sequelize-fixtures": "0.x.x",
     "express-domain-middleware": "0.x.x",
-    "connect-flash": "~0.1.1"
+    "connect-flash": "~0.1.1",
+    "express-validator": "2.x.x",
+    "bcrypt-nodejs": "0.x.x"
   },
   "devDependencies": {
     "less": "1.x.x",

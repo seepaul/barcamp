@@ -37,4 +37,11 @@
     ],
     "replaceConsole": true
   }
+  "email": {
+    "smtpHost": "localhost",
+    "secureConnection": false,
+    "port": 25,
+    "sender": "noreply@barcamp-graz.at",
+    "subjectWelcome": "[BarCamp Graz] Anmeldung"
+  }
 }
