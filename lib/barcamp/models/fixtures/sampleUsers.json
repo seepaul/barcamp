@@ -3,8 +3,8 @@
     "model": "User",
     "data": {
       "username": "barcamp",
-      "firstName": "Max",
-      "lastName": "Mustermann",
+      "firstName": "Orga",
+      "lastName": "Robot",
       "password": "test"
     } 
   }
