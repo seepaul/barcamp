@@ -100,6 +100,21 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
         tag3: {
           required: true,
           tag: true
+        },
+        preferredCamp: {
+          required: false
+        },
+        shirtSize: {
+          required: false
+        },
+        note: {
+          required: false
+        },
+        children: {
+          required: false
+        },
+        newcomer: {
+          required: false
         }
       }
     });
