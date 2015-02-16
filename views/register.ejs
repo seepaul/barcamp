@@ -1,167 +1,137 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<% layout('layout') -%>
+<% block('title', "BarCamp Graz Anmeldung") %>
 
-    <title>Barcamp Tagcloud<% if(stagingEnvironment()) { %> (staging)<% } else if(developmentEnvironment()) { %> (development)<% } %></title>
+<h2>Anmeldung zum BarCamp Graz 2015</h2>
 
-<% if(developmentEnvironment()) { %>
-    <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-		<link href="/css/main.css" rel="stylesheet">
-<% } else { %>
-  <link rel="stylesheet" href="/css/barcamp.min.css">
-<% } %>
-  </head>
+<p><b style="color:#222">Warum anmelden?</b> Da wir für alle Besucher ein kostenloses Buffet, Getränke und T-Shirts anbieten wollen, möchten wir im Vorhinein wissen wieviele Besucher zum BarCamp Graz kommen werden. Das erleichter nicht nur uns die Organisation, sondern bringt auch Dir die beste BarCamp Experience.</p>
 
-  <body id="register">
-  <div class="container">
+<form novalidate="novalidate" method="POST" action="#">
 
+  <h3>Persönliche Informationen</h3>
 
-			<div class="page-header">
-				<h1>BarCamp Anmeldung</h1>
-			</div>
+  <p>Jeder Besucher bekommt von uns ein Namensschild mit seinem Vor- und Nachnamen drauf. So können sich alle viel schneller kennenlernen.<br><b style="color:#333">Deine E-Mail Adresse wird, wie alle Daten, vertraulich behandelt und nie veröffentlicht.</b></p>
+  <div style="margin-top:40px"></div>
 
+  <div class="form-group">
+    <label for="email">E-Mail Adresse</label>
+    <input type="email" id="email" class="form-control" required>
+  </div>
 
-			<form novalidate="novalidate" class="form-horizontal" method="POST" action="#">
+  <div class="form-group">
+    <label for="firstName">Vorname</label>
+    <input class="form-control" id="firstName" name="firstName" value="" type="text" required>
+  </div>
 
-				<fieldset>
+  <div class="form-group">
+    <label for="lastName">Nachname</label>
+    <input class="form-control" id="lastName" name="lastName" value="" type="text" required>
+  </div>
 
-      <div class="row">
-        <div class="col-sm-7 col-xs-7">
+  <div style="margin-top:40px"></div>
 
-          
+  <div class="form-group">
+    <label for="lastName">Ist es Dein erstes BarCamp?</label>
+    <p>Um Neulingen einen besonders guten Start bieten zu können, würden wir gerne wissen ob Du zum ersten Mal bei einem BarCamp zu Besuch bist.</p>
+  </div>
 
-					<div class="form-group row">
-						<label class="control-label col-lg-4" for="firstName">Vorname</label>
-						<div class="controls col-lg-7">
-							<input class="form-control" id="firstName" name="firstName" value="" type="text">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="control-label col-lg-4" for="lastName">Nachname</label>
-						<div class="controls col-lg-7">
-							<input class="form-control" id="lastName" name="lastName" value="" type="text">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="control-label col-lg-4" for="email">E-mail</label>
-						<div class="controls col-lg-7">
-							<input class="form-control" id="email" name="email" value="" type="text">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="control-label col-lg-4" for="tag1">Tag 1</label>
-						<div class="controls col-lg-7">
-							<input class="form-control" id="tag1" name="tag1" value="" type="text">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="control-label col-lg-4" for="tag2">Tag 2</label>
-						<div class="controls col-lg-7">
-							<input class="form-control" id="tag2" name="tag2" value="" type="text">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="control-label col-lg-4" for="tag3">Tag 3</label>
-						<div class="controls col-lg-7">
-							<input class="form-control" id="tag3" name="tag3" value="" type="text">
-						</div>
-					</div>
+  <div class="checkbox">
+    <label>
+      <input id="newcomer" name="newcomer" type="checkbox"> Ja, dies ist mein erstes BarCamp
+    </label>
+  </div>
 
-					<div class="form-group row">
-						<label class="control-label col-lg-4" for="tag3">Bevorzugtes Camp</label>
-						<div class="controls col-lg-7">
-					    <select id="preferredCamp" name="preferredCamp" class="form-control">
-						    <option value="uxcamp">uxcamp</option>
-						    <option value="politcamp">politcamp</option>
-						    <option value="startcamp">startcamp</option>
-						    <option value="designcamp">designcamp</option>
-						    <option value="appdevcamp">appdevcamp</option>
-						    <option value="wissenscamp">wissenscamp</option>
-					    </select>
-						</div>
-					</div>
+  <div style="margin-top:40px"></div>
 
-					<div class="form-group row">
-						<label class="control-label col-lg-4" for="tag3">T-Shirt Größe</label>
-						<div class="controls col-lg-7">
-					    <select id="shirtSize" name="shirtSize" class="form-control">
-						    <option value="NULL"></option>
-						    <option value="S">S</option>
-						    <option value="M">M</option>
-						    <option value="L">L</option>
-						    <option value="XL">XL</option>
-						    <option value="XXL">XXL</option>
-					    </select>
-						</div>
-					</div>
+  <div class="form-group">
+    <label for="shirtSize">T-Shirt Größe</label>
+    <p>Unsere Teilnehmer bekommen jeweils ein T-Shirt von uns. Damit wir auch Deine Größe vorrätig haben, bitten wir Dich Deine T-Shirt Größe anzugeben:</p>
+    <select id="shirtSize" name="shirtSize" class="form-control">
+      <option value="NULL">Kein T-Shirt</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+  </div>
 
-					<div class="form-group row">
-						<label class="control-label col-lg-4" for="note">Anmerkung</label>
-						<div class="controls col-lg-7">
-              <textarea class="form-control" id="note" name="note"></textarea>
-						</div>
-					</div>
+  <hr style="margin:40px 0">
 
-					<div class="form-group row">
-						<label class="control-label col-lg-4" for="children">Anzahl der Kinder</label>
-						<div class="controls col-lg-7">
-							<input class="form-control" id="children" name="children" value="" type="text">
-						</div>
-					</div>
+  <h3>Deine drei "Tags"</h3>
 
-					<div class="form-group row">
-						<label class="control-label col-lg-4" for="newcomer">Das erste BarCamp?</label>
-						<div class="controls col-lg-7">
-							<input class="form-control" id="newcomer" name="newcomer" type="checkbox">
-						</div>
-					</div>
+  <p>Ein Tag (dt. "Etikett", sprich: Täg) ist eine Ein-Wort-Beschreibung von Dir. Jeder Besucher trägt drei Tags auf seinen Namensschild. Das sind meistens die drei Dinge, die Dich am meisten interessieren.</p>
 
-					<div class="form-group row">
-						<label class="control-label col-lg-4" for="remind">Erinnerungsemail?</label>
-						<div class="controls col-lg-7">
-							<input class="form-control" id="remind" name="remind" type="checkbox">
-						</div>
-					</div>
-<hr/>
-					<div class="form-actions row">
-						<div class="col-lg-4" style="text-align:right"><input id="register" class="btn btn-success btn-large" value="Zum BarCamp anmelden" type="submit"></div><div class="col-lg-7"><a class="btn" href="http://barcamp-graz.at/">Abbrechen</a></div>
-					</div>
+  <p><b style="color:#222">Beispiele</b> für Tags sind: Web-Entwicklung, Basisdemokratie, Gründen, Photoshop, Wissensmanagement</p>
+  <div style="margin-top:40px"></div>
 
- </div>
+  <div class="form-group">
+    <label for="tag1">Tag 1</label>
+    <input class="form-control" id="tag1" name="tag1" value="" type="text">
+  </div>
 
-<div class="col-sm-5 col-xs-5 jumbotron" style="font-size: 1.2em">
-  <p>
-  Mit dem von dir angegebenen Namen, drucken wir dir ein <strong>Namensschild</strong>, welcher bei der Rezeption am #bcg vorliegen wird.
-  Auf diesem Namensschild vermerken wir ob du des erste Mal auf einen BarCamp bist, welches Camp du bevorzugst und mit welchen Tags du dich beschreibst.
-  </p>
-  <p>
-  Mit der Bekanntgabe deiner Konfektionsgröße können wir abschätzen, wieviele <strong>T-Shirts</strong> wir bestellen sollten, sodass jeder eines in seiner Größe vorfindet.
-  </p>
-  <p>
-  Wir werden uns <strong>Anmerkungen</strong> solang wir Zeit dafür haben berücksichtigen und uns rechtzeitig vie <strong>Erinnerungs-Email</strong> melden bevor das barCamp stattfindet, sofern es von dir gewünscht ist.
-  </p>
-  <p>
-  Alle Angaben werden nur zu dem hier angegebene Zweck verwendet und scheinen nicht auf sofern es nicht nötig ist. Zwei Ausnahmen bilden eine Liste der <a href="/list">angemeldeten Personen</a> und die <a href="/">TagCloud</a>.
-</p><p>Sobald das BarCamp beendet ist, werden die Anmeldedaten vom System entfernt.
-  </p>
-</div>
+  <div class="form-group">
+    <label for="tag2">Tag 2</label>
+    <input class="form-control" id="tag2" name="tag2" value="" type="text">
+  </div>
+
+  <div class="form-group">
+    <label for="tag3">Tag 3</label>
+    <input class="form-control" id="tag3" name="tag3" value="" type="text">
+  </div>
+
+  <hr style="margin:40px 0">
+
+  <h3>Dein bevorzugtes Camp</h3>
+
+  <p>Bitte gib uns an welches Camp Du gerne primär besuchen würdest. So können wir die Raumeinteilung einfacher gestalten. Selbstverständlich kannst Du an jedem der Camps teilnehmen und jederzeit wechseln.</p>
+  <div style="margin-top:40px"></div>
+
+  <div class="form-group">
+    <label for="preferredCamp">Bevorzugtes Camp</label>
+    <select id="preferredCamp" name="preferredCamp" class="form-control">
+      <option value="appdevcamp">appdevcamp</option>
+      <option value="designcamp">designcamp</option>
+      <option value="politcamp">politcamp</option>
+      <option value="startcamp">startcamp</option>
+      <option value="uxcamp">uxcamp</option>
+      <option value="wissenscamp">wissenscamp</option>
+    </select>
+  </div>
+
+  <hr style="margin:40px 0">
+
+  <h3>Kinderbetreuung</h3>
+
+  <p>Wir bieten jedes Jahr Kinderbetreuung am BarCamp Graz an. Bitte gib hier an ob Du die Kinderbetreuung für Deine Kinder in Anspruch nehmen möchtest.</p>
+
+  <div class="checkbox">
+    <label>
+      <input id="children" name="children" type="checkbox"> Ja, ich möchte für meine Kinder die BarCamp Graz Kinderbetreuung in Anspruch nehmen
+    </label>
+  </div>
+
+  <hr style="margin:40px 0">
+
+  <h3>Anmerkungen</h3>
+
+  <p>Hier hast Du die Möglichkeit noch etwas zu Deiner Anmledung anzumerken.</p>
+
+  <div class="form-group">
+    <textarea class="form-control" id="note" name="note"></textarea>
+  </div>
+
+  <div style="margin-top:40px"></div>
+
+  <div class="checkbox">
+    <label>
+      <input id="newcomer" name="newcomer" type="checkbox"> Ich akzeptiere die <a href="http://barcamp-graz.at/information/charta/" target="_blank">BarCamp Graz Charta</a> und komme verlässlich
+    </label>
+  </div>
 
 
-				</fieldset>
-			</form>
+  <div class="form-actions" style="margin-top:40px">
+    <input id="register" class="btn btn-large btn-success" value="Zum BarCamp Graz anmelden" type="submit">
+    <a class="btn" href="http://barcamp-graz.at/">Nicht anmelden und zurück zur BarCamp Graz Website</a>
+  </div>
 
-      
-</div>
-    <% if(developmentEnvironment()) { %>
-      <script data-main="/js/main" src="/js/require.js"></script>
-      <script src="/js/config.js"></script>
-    <% } else { %>
-      <script data-main="/js/barcamp.min" src="/js/require.min.js"></script>
-    <% } %>
-  </body>
-</html>
+
+</form>

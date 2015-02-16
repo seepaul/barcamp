@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title><%= blocks.title %><% if(stagingEnvironment()) { %> (staging)<% } else if(developmentEnvironment()) { %> (development)<% } %></title>
+
+  <% if(developmentEnvironment()) { %>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+  <% } else { %>
+  <link rel="stylesheet" href="/css/barcamp.min.css">
+  <% } %>
+
+  <style>
+    p {
+      color: #888;
+    }
+
+    input[type=text], input[type=email], select {
+      font-size: 1.5em !important;
+      height:50px !important;
+    }
+
+    textarea {
+      height:100px !important;
+    }
+
+    label {
+      font-size: 1.2em;
+      margin-bottom:10px !important;
+    }
+  </style>
+
+</head>
+
+<body id="register">
+
+<div class="container">
+
+    <div class="masthead" style="margin-top:40px">
+      <ul class="nav nav-pills pull-right">
+        <li class="active"><a href="#">Anmledung</a></li>
+        <li><a href="#">Teilnehmer</a></li>
+        <li><a href="/">TagCloud</a></li>
+      </ul>
+      <img src="/images/icon_and_wording529x160.png" />
+    </div>
+
+    <hr>
+
+    <%- body %>
+
+    <div id="footer" style="text-align:center; margin-top:40px">
+      <p>© 2015 <a href="http://barcamp-graz.at">Barcamp Graz</a> - <a href="http://barcamp-graz.at/information/impressum/ ">Impressum</a> - <a href="http://barcamp-graz.at/information/charta/">Policy</a></p>
+    </div>
+
+</div>
+
+
+  <% if(developmentEnvironment()) { %>
+  <script data-main="/js/main" src="/js/require.js"></script>
+  <script src="/js/config.js"></script>
+  <% } else { %>
+  <script data-main="/js/barcamp.min" src="/js/require.min.js"></script>
+  <% } %>
+</body>
+</html>
