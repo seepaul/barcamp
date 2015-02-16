@@ -123,6 +123,7 @@ node barcamp-server.js
 
 # Authors #
 
-|:---------------------|:---------------------------------------------|
-| **Author**           | Paul Rudolf Seebacher (<mail@seepaul.org>)                |
-| **Author**           | Jürgen Brüder (<hello@juergenbrueder.com>)             |
+              | 
+------------- | -------------
+**Author**    | Paul Rudolf Seebacher (<mail@seepaul.org>) 
+**Author**    | Jürgen Brüder (<hello@juergenbrueder.com>)
