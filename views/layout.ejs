@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title><%= blocks.title %><% if(stagingEnvironment()) { %> (staging)<% } else if(developmentEnvironment()) { %> (development)<% } %></title>
+
+  <% if(developmentEnvironment()) { %>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+  <% } else { %>
+  <link rel="stylesheet" href="/css/barcamp.min.css">
+  <% } %>
+</head>
+
+<body id="register">
+  <%- body %>
+
+  <% if(developmentEnvironment()) { %>
+  <script data-main="/js/main" src="/js/require.js"></script>
+  <script src="/js/config.js"></script>
+  <% } else { %>
+  <script data-main="/js/barcamp.min" src="/js/require.min.js"></script>
+  <% } %>
+</body>
+</html>
