@@ -1,0 +1,35 @@
+<% layout('layout') -%>
+<% block('title', "Teilnehmer | BarCamp Graz 2015") %>
+
+<div class="page-header">
+  <h2>Teilnehmer BarCamp Graz 2015</h2>
+</div>
+
+<% if (users.length > 0) { %>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Vorname</th>
+        <th>Nachname</th>
+        <th>Bevorzugtes Camp</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(function(u, i) { %>
+      <tr>
+        <th scope="row"><%= i + 1 %></th>
+        <td><%= u.firstName %></td>
+        <td><%= u.lastName %></td>
+        <td><%= u.preferredCamp %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+<% } else { %>
+
+  <p>Es liegen noch keine Anmeldungen vor.</p>
+
+<% } %>

@@ -7,7 +7,25 @@ body .container {
   padding-bottom: 2em;
 }
 
+body#register  p {
+  color: #888;
+}
 
+body#register input[type=text],
+body#register input[type=email],
+body#register select {
+  font-size: 1.5em !important;
+  height:50px !important;
+}
+
+body#register  textarea {
+  height:100px !important;
+}
+
+body#register  label {
+  font-size: 1.2em;
+  margin-bottom:10px !important;
+}
 
 body#login {
 		padding-top: 5px;

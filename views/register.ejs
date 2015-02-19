@@ -14,7 +14,7 @@
 
   <div class="form-group">
     <label for="email">E-Mail Adresse</label>
-    <input type="email" id="email" class="form-control" required>
+    <input class="form-control" id="email" name="email" value="" type="text" required>
   </div>
 
   <div class="form-group">
@@ -24,13 +24,13 @@
 
   <div class="form-group">
     <label for="lastName">Nachname</label>
-    <input class="form-control" id="lastName" name="lastName" value="" type="text" required>
+    <input class="form-control" id="lastName" name="lastName" value="" type="text">
   </div>
 
   <div style="margin-top:40px"></div>
 
   <div class="form-group">
-    <label for="lastName">Ist es Dein erstes BarCamp?</label>
+    <label for="newcomer">Ist es Dein erstes BarCamp?</label>
     <p>Um Neulingen einen besonders guten Start bieten zu können, würden wir gerne wissen ob Du zum ersten Mal bei einem BarCamp zu Besuch bist.</p>
   </div>
 
@@ -46,7 +46,7 @@
     <label for="shirtSize">T-Shirt Größe</label>
     <p>Unsere Teilnehmer bekommen jeweils ein T-Shirt von uns. Damit wir auch Deine Größe vorrätig haben, bitten wir Dich Deine T-Shirt Größe anzugeben:</p>
     <select id="shirtSize" name="shirtSize" class="form-control">
-      <option value="NULL">Kein T-Shirt</option>
+      <option value="none">Kein T-Shirt</option>
       <option value="S">S</option>
       <option value="M">M</option>
       <option value="L">L</option>
@@ -123,13 +123,13 @@
 
   <div class="checkbox">
     <label>
-      <input id="newcomer" name="newcomer" type="checkbox"> Ich akzeptiere die <a href="http://barcamp-graz.at/information/charta/" target="_blank">BarCamp Graz Charta</a> und komme verlässlich
+      <input id="accept" name="accept" type="checkbox" required> Ich akzeptiere die <a href="http://barcamp-graz.at/information/charta/" target="_blank">BarCamp Graz Charta</a> und komme verlässlich
     </label>
   </div>
 
 
   <div class="form-actions" style="margin-top:40px">
-    <input id="register" class="btn btn-large btn-success" value="Zum BarCamp Graz anmelden" type="submit">
+    <input id="register" class="btn btn-large btn-success" value="Zum BarCamp Graz anmelden" type="submit" style="height:50px">
     <a class="btn" href="http://barcamp-graz.at/">Nicht anmelden und zurück zur BarCamp Graz Website</a>
   </div>
 

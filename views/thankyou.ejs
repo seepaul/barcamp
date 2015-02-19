@@ -1,43 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<% layout('layout') -%>
+<% block('title', "BarCamp Graz - Danke!") %>
 
-    <title>Barcamp Tagcloud<% if(stagingEnvironment()) { %> (staging)<% } else if(developmentEnvironment()) { %> (development)<% } %></title>
+<div class="page-header">
+  <h2>Anmeldung zum BarCamp Graz 2015</h2>
+</div>
 
-<% if(developmentEnvironment()) { %>
-    <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-		<link href="/css/main.css" rel="stylesheet">
-<% } else { %>
-  <link rel="stylesheet" href="/css/barcamp.min.css">
-<% } %>
-  </head>
-
-  <body id="thankyou">
-  <div class="container">
-
-
-			<div class="page-header">
-				<h1>BarCamp Anmeldung</h1>
-			</div>
-
-      <div class="jumbotron">
-        <h1>Vielen Dank!</h1>
-        <p>Wir haben dich nun als Teilnehemer des BarCamps eingetragen und freuen uns bereits auf dich.</p>
-        <p><a class="btn btn-primary btn-lg" href="http://barcamp-graz.at/" role="button">Zurück zur BarCamp Website</a></p>
-      </div>
-
-  </div>
-
-    <% if(developmentEnvironment()) { %>
-      <script data-main="/js/main" src="/js/require.js"></script>
-      <script src="/js/config.js"></script>
-    <% } else { %>
-      <script data-main="/js/barcamp.min" src="/js/require.min.js"></script>
-    <% } %>
-  </body>
-</html>
+<div class="jumbotron">
+  <h1>Vielen Dank!</h1>
+  <p>Wir haben Dich als TeilnehmerIn des BarCamps Graz registriert und freuen uns bereits auf Dich.</p>
+  <p><a class="btn btn-primary btn-lg" href="http://barcamp-graz.at/" role="button">Zurück zur BarCamp Website</a></p>
+</div>
