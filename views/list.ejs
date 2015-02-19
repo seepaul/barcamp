@@ -17,14 +17,14 @@
       </tr>
     </thead>
     <tbody>
-      <% for(var i=0; i<users.length; i++) {%>
+      <% users.forEach(function(u, i) { %>
       <tr>
         <th scope="row"><%= i + 1 %></th>
-        <td><%= users[i].firstName %></td>
-        <td><%= users[i].lastName %></td>
-        <td><%= users[i].preferredCamp %></td>
+        <td><%= u.firstName %></td>
+        <td><%= u.lastName %></td>
+        <td><%= u.preferredCamp %></td>
       </tr>
-      <% } %>
+      <% }); %>
     </tbody>
   </table>
 

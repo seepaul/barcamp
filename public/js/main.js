@@ -71,6 +71,20 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
       type: 'sphere'
     });
 
+    $('body#register form').submit(function (e) {
+      e.preventDefault();
+
+      var inputs = $('input[value=""]');
+      $.each(inputs, function (i, v) {
+        if ($(v).val() === '') {
+          $(v).attr('disabled', true);
+        }
+      });
+
+      //$('input[value=""]').attr('name', null);
+      e.target.submit();
+    });
+
     $("body#register form").validate({
       rules: {
         firstName: {
@@ -82,7 +96,7 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
         lastName: {
           minlength: 2,
           maxlength: 36,
-          required: true,
+          required: false,
           validName: true
         },
         email: {
