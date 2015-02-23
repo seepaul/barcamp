@@ -121,7 +121,7 @@ module.exports = function(grunt) {
     git_deploy: {
       staging: {
         options: {
-          url: 'user@production-server:barcamp.git',
+          url: 'seepaul@clara.seepaul.org:barcamp.git',
           branch: 'release',
           massage: 'internal staged release'
         },
