@@ -64,13 +64,6 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
       }
     });
 
-    $("#tagcloud").width($(window).width() - 100);
-    $("#tagcloud").tagcloud({
-      height: $(window).height() - 100,
-      sizemax: 100,
-      type: 'sphere'
-    });
-
     $('body#register form').submit(function (e) {
       e.preventDefault();
 
@@ -99,10 +92,6 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
           required: false,
           validName: true
         },
-        email: {
-          email: true,
-          required: true
-        },
         tag1: {
           required: true,
           tag: true
@@ -129,8 +118,21 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
         },
         newcomer: {
           required: false
+        },
+        email: {
+          required:true,
+          email: true,
+          remote: "/check_email",
+          //TODO Validation message
         }
       }
+    });
+
+    $("#tagcloud").width($(window).width() - 100);
+    $("#tagcloud").tagcloud({
+      height: $(window).height() - 100,
+      sizemax: 100,
+      type: 'sphere'
     });
 
   });
