@@ -3,38 +3,38 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
-    // CSS minification
-    cssmin : {
-      theme : {
-        src : [
+		
+		// CSS minification
+		cssmin : {
+			theme : {
+				src : [
           'public/css/bootstrap.css',
           'public/font-awesome/css/font-awesome.min.css',
           'public/css/main.css'
-        ],
-        dest : 'build/public/css/barcamp.min.css'
-      }
-    },
-    // HTML minification
-    htmlcompressor : {
-      compile : {
-        files : [{
+				],
+				dest : 'build/public/css/barcamp.min.css'
+			}
+		},
+		// HTML minification
+		htmlcompressor : {
+			compile : {
+				files : [{
             expand: true,
             src: '**/*.ejs',
             dest: 'build/views',
             cwd: 'views'
         }],
-        options : {
-          type: 'html',
-          preserveServerScript: true
-        }
-      }
-    },
-    shell : {
-    // Create a build folder based on public, remove the javascript/css
-      createBuild : {
-        command : 'rm -rf build; cp -R public build; rm -rf build/css/*.css build/js/*;'
-      },
+				options : {
+					type: 'html',
+					preserveServerScript: true
+				}
+			}
+		},
+		shell : {
+		// Create a build folder based on public, remove the javascript/css
+			createBuild : {
+				command : 'rm -rf build; cp -R public build; rm -rf build/css/*.css build/js/*;'
+			},
       copyArtifacts : {
         command : 'cp ./barcamp-server.js ./build/barcamp-server.js &&\n\
                    cp -r ./config ./build &&\n\
@@ -70,7 +70,7 @@ module.exports = function(grunt) {
       }
       
     },
-    // Uglify JS
+		// Uglify JS
     uglify: {
       library: {
         files: [{
@@ -183,10 +183,10 @@ module.exports = function(grunt) {
   // enable git-deploy plugin
   grunt.loadNpmTasks('grunt-git-deploy');
   // more
-  grunt.loadNpmTasks('grunt-css');
-  //grunt.loadNpmTasks('grunt-shell');
-  grunt.loadNpmTasks('grunt-yui-compressor');
-  grunt.loadNpmTasks('grunt-htmlcompressor');
+	grunt.loadNpmTasks('grunt-css');
+	//grunt.loadNpmTasks('grunt-shell');
+	grunt.loadNpmTasks('grunt-yui-compressor');
+	grunt.loadNpmTasks('grunt-htmlcompressor');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-minjson');
   grunt.loadNpmTasks('grunt-mocha');
@@ -194,13 +194,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jslint');
   // Default task(s).
   grunt.registerTask('default', ['uglify']);
-  //grunt.registerTask('build', 'shell:createBuild cssmin min htmlcompressor');
-  grunt.registerTask('publish', 'git_deploy');
+ 	//grunt.registerTask('build', 'shell:createBuild cssmin min htmlcompressor');
+	grunt.registerTask('publish', 'git_deploy');
   grunt.registerTask('build', ['jslint', 'uglify:library', 'minjson', 'htmlcompressor', 'cssmin', 'min', 'requirejs', 'shell:copyArtifacts']);
   grunt.registerTask('build-debug', ['jslint', 'uglify:library', 'minjson', 'htmlcompressor', 'cssmin', 'min', 'requirejs', 'uglify:client-debug', 'shell:copyArtifacts']);
   grunt.registerTask('clean', ['shell:clean']);
-  grunt.registerTask('clean-all', ['shell:clean', 'shell:clean-all']);
+	grunt.registerTask('clean-all', ['shell:clean', 'shell:clean-all']);
   grunt.registerTask('test', ['material_info']);
-  grunt.registerTask('debug', ['shell:stop', 'shell:start-debug', 'shell:start-debugger']);
-  //grunt.registerTask('release', 'shell:publish')
+	grunt.registerTask('debug', ['shell:stop', 'shell:start-debug', 'shell:start-debugger']);
+	//grunt.registerTask('release', 'shell:publish')
 };

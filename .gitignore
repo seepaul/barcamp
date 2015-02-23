@@ -1,4 +1,5 @@
 barcamp.log
+Gruntfile*
 config/default.json
 config/development.json
 config/runtime.json
