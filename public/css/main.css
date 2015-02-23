@@ -86,3 +86,8 @@ div.has-error .help-block {
 .required {
   color: red;
 }
+
+.presocial {
+  margin: 12px -5px 0 0;
+  font-size: 20px;
+}

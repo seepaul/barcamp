@@ -14,6 +14,7 @@
         <th>Vorname</th>
         <th>Nachname</th>
         <th>Bevorzugtes Camp</th>
+        <th>Links</th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +24,12 @@
         <td><%= u.firstName %></td>
         <td><%= u.lastName %></td>
         <td><%= u.preferredCamp %></td>
+        <td>
+          <% if (u.twitter) { %> <a href="https://twitter.com/<%= u.twitter %>"><i class="fa fa-twitter-square"></i></a> <% } %>
+          <% if (u.facebook) { %> <a href="https://www.facebook.com/<%= u.facebook %>"><i class="fa fa-facebook-square"></i></a> <% } %>
+          <% if (u.google_plus) { %> <a href="https://plus.google.com/+<%= u.google_plus %>"><i class="fa fa-google-plus-square"></i></a> <% } %>
+          <% if (u.website) { %> <a href="<%= u.website %>"><i class="fa fa-home"></i></a> <% } %>
+        </td>
       </tr>
       <% }); %>
     </tbody>
