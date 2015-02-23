@@ -82,3 +82,7 @@ ul#tagcloud {
 div.has-error .help-block {
   display: relative;
 }
+
+.required {
+  color: red;
+}
