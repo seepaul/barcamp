@@ -11,8 +11,7 @@
     <thead>
       <tr>
         <th>#</th>
-        <th>Vorname</th>
-        <th>Nachname</th>
+        <th>Name</th>
         <th>Bevorzugtes Camp</th>
         <th>Links</th>
       </tr>
@@ -21,8 +20,7 @@
       <% users.forEach(function(u, i) { %>
       <tr>
         <th scope="row"><%= i + 1 %></th>
-        <td><%= u.firstName %></td>
-        <td><%= u.lastName %></td>
+        <td><%= u.getFullname() %></td>
         <td><%= u.preferredCamp %></td>
         <td>
           <% if (u.twitter) { %> <a href="https://twitter.com/<%= u.twitter %>"><i class="fa fa-twitter-square"></i></a> <% } %>
