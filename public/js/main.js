@@ -120,9 +120,9 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
           required: false
         },
         email: {
-          required:true,
+          required: true,
           email: true,
-          remote: "/check_email",
+          remote: "/check_email"
           //TODO Validation message
         }
       }
