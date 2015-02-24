@@ -81,22 +81,24 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
     $("body#register form").validate({
       rules: {
         firstName: {
-          minlength: 2,
+          minlength: 3,
           maxlength: 36,
           required: true,
           validName: true
         },
         lastName: {
-          minlength: 2,
+          minlength: 3,
           maxlength: 36,
           required: false,
           validName: true
         },
         tag1: {
+          minlength: 3,
           required: true,
           tag: true
         },
         tag2: {
+          minlength: 3,
           required: true,
           tag: true
         },
@@ -124,8 +126,20 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
           email: true,
           remote: "/check_email"
           //TODO Validation message
-        }
-      }
+        },
+      },
+      messages: {
+        firstName: "Bitte gib deinen Vornamen an (min. 3 Zeichen)",
+        tag1: "Bitte gib alle drei Tags an (min. 3 Zeichen)",
+        tag2: "Bitte gib alle drei Tags an (min. 3 Zeichen)",
+        tag3: "Bitte gib alle drei Tags an (min. 3 Zeichen)",
+        accept: "Du musst die BarCamp Graz Charta akzeptieren um teilnehmen zu können",
+        email: {
+          required: "Bitte gib deine E-Mail Adresse an",
+          email: "Deine E-Mail Adresse muss in folgenden Format sein: name@domain.com",
+          remote: "Diese E-Mail Adresse wurde bereits verwendet"
+        },
+      },
     });
 
     $("#tagcloud").width($(window).width() - 100);

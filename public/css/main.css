@@ -91,3 +91,7 @@ div.has-error .help-block {
   margin: 12px -5px 0 0;
   font-size: 20px;
 }
+
+.error {
+  border-color: #b94a48;
+}
