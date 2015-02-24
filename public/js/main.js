@@ -125,7 +125,6 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
           required: true,
           email: true,
           remote: "/check_email"
-          //TODO Validation message
         },
       },
       messages: {
@@ -142,6 +141,24 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
       },
     });
 
+    // Only enable Submit button if required fields are filled out
+    $('input').on('blur', function() {
+      if ($("#register-form").valid()) {
+        $('input[type="submit"]').removeAttr('disabled');
+      } else {
+        $('input[type="submit"]').attr('disabled','disabled');
+      }
+    });
+
+    $('input:checkbox').change(function() {
+      if ($("#register-form").valid()) {
+        $('input[type="submit"]').removeAttr('disabled');
+      } else {
+        $('input[type="submit"]').attr('disabled','disabled');
+      }
+    });
+
+    // TODO Still breaks JQuery
     $("#tagcloud").width($(window).width() - 100);
     $("#tagcloud").tagcloud({
       height: $(window).height() - 100,

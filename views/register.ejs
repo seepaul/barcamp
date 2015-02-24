@@ -9,7 +9,7 @@
 <p><span class="required"><b>*</b></span> kennzeichnet Pflichtfelder</p>
 
 
-<form novalidate="novalidate" method="POST" action="/register">
+<form novalidate="novalidate" id="register-form" method="POST" action="/register">
 
   <h3>Persönliche Informationen</h3>
 
@@ -225,13 +225,13 @@
 
   <div class="checkbox">
     <label>
-      <input id="accept" name="accept" type="checkbox" value="true" required> Ich akzeptiere die <a href="http://barcamp-graz.at/information/charta/" target="_blank">BarCamp Graz Charta</a> und komme verlässlich <span class="required"><b>*</b></span>
+      <input id="accept" name="accept" type="checkbox" value="true" required> <span>Ich akzeptiere die <a href="http://barcamp-graz.at/information/charta/" target="_blank">BarCamp Graz Charta</a> und komme verlässlich <span class="required"><b>*</b></span></span>
     </label>
   </div>
 
 
   <div class="form-actions" style="margin-top:40px">
-    <input id="register" class="btn btn-large btn-success" value="Zum BarCamp Graz anmelden" type="submit" style="height:50px">
+    <input id="register" class="btn btn-large btn-success" value="Zum BarCamp Graz anmelden" type="submit" style="height:50px" disabled="disabled">
     <a class="btn" href="http://barcamp-graz.at/">Nicht anmelden und zurück zur BarCamp Graz Website</a>
   </div>
 

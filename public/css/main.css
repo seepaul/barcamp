@@ -95,3 +95,7 @@ div.has-error .help-block {
 .error {
   border-color: #b94a48;
 }
+
+.checkbox .error {
+  font-size: 18px !important;
+}
