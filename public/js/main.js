@@ -130,24 +130,24 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
           email: true,
           remote: "/check_email"
         },
-	session_title: {
-	  maxlength: 256
-	},
-	session_desc: {
-	  maxlength: 768
+        session_title: {
+          maxlength: 256
         },
-	twitter: {
-	  maxlength: 256
-	},
-	facebook: {
-	  maxlength: 256
-	},
-	google_plus: {
-	  maxlength: 256
-	},
-	website: {
-	  url: true
-	}
+        session_desc: {
+          maxlength: 768
+        },
+        twitter: {
+          maxlength: 256
+        },
+        facebook: {
+          maxlength: 256
+        },
+        google_plus: {
+          maxlength: 256
+        },
+        website: {
+          url: true
+        }
       },
       messages: {
         firstName: "Bitte gib deinen Vornamen an (min. 3 Zeichen)",
@@ -159,24 +159,24 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
           required: "Bitte gib deine E-Mail Adresse an",
           email: "Deine E-Mail Adresse muss in folgenden Format sein: name@domain.com",
           remote: "Diese E-Mail Adresse wurde bereits verwendet"
-        },
-      },
-    });
-
-    // Only enable Submit button if required fields are filled out
-    $('input').on('blur', function() {
-      if ($("#register-form").valid()) {
-        $('input[type="submit"]').removeAttr('disabled');
-      } else {
-        $('input[type="submit"]').attr('disabled','disabled');
+        }
       }
     });
 
-    $('input:checkbox').change(function() {
+    // Only enable Submit button if required fields are filled out
+    $('input').on('blur', function () {
       if ($("#register-form").valid()) {
         $('input[type="submit"]').removeAttr('disabled');
       } else {
-        $('input[type="submit"]').attr('disabled','disabled');
+        $('input[type="submit"]').attr('disabled', 'disabled');
+      }
+    });
+
+    $('input:checkbox').change(function () {
+      if ($("#register-form").valid()) {
+        $('input[type="submit"]').removeAttr('disabled');
+      } else {
+        $('input[type="submit"]').attr('disabled', 'disabled');
       }
     });
 
