@@ -10,7 +10,7 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
     }, "Please use only a-z0-9_-");
 
     jQuery.validator.addMethod("tag", function (value, element) {
-      return this.optional(element) || /^[a-zA-Z0-9_\- ]+$/i.test(value);
+      return this.optional(element) || /^[a-zA-Z0-9_\-]+$/i.test(value);
     }, "Please use only a-zA-Z0-9_- ");
 
     jQuery.validator.addMethod("validName", function (value, element) {
@@ -94,16 +94,19 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
         },
         tag1: {
           minlength: 3,
+          maxlength: 36,
           required: true,
           tag: true
         },
         tag2: {
           minlength: 3,
+          maxlength: 36,
           required: true,
           tag: true
         },
         tag3: {
           required: true,
+          maxlength: 36,
           tag: true
         },
         preferredCamp: {
@@ -114,6 +117,7 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
         },
         note: {
           required: false
+          maxlength: 768,
         },
         children: {
           required: false
@@ -126,6 +130,24 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
           email: true,
           remote: "/check_email"
         },
+	session_title: {
+	  maxlength: 256
+	},
+	session_desc: {
+	  maxlength: 768
+        },
+	twitter: {
+	  maxlength: 256
+	},
+	facebook: {
+	  maxlength: 256
+	},
+	google_plus: {
+	  maxlength: 256
+	},
+	website: {
+	  url: true
+	}
       },
       messages: {
         firstName: "Bitte gib deinen Vornamen an (min. 3 Zeichen)",
