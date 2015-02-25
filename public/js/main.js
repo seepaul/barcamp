@@ -116,7 +116,7 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
           required: false
         },
         note: {
-          required: false
+          required: false,
           maxlength: 768
         },
         children: {
