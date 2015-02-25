@@ -1,37 +1,10 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
+<% layout('layout') -%>
+<% block('title', "BarCamp Graz - Danke!") %>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Error - Matdb<% if(stagingEnvironment()) { %> (staging)<% } else if(developmentEnvironment()) { %> (development)<% } %></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
 
-<% if(developmentEnvironment()) { %>
-    <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/simple-sidebar.css" rel="stylesheet">
-    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-		<link href="/css/main.css" rel="stylesheet">
-<% } else { %>
-  <link rel="stylesheet" href="/css/barcamp.min.css">
-<% } %>
-</head>
-
-<body>
-
-  <div class="content">
-    <h1>Es ist ein Fehler aufgetreten!</h1>
-    <p><%= error.message %></p>
-    <pre><%= error.stack %></pre>
-  </div>
-
-</body>
-
-</html>
-
+<div class="jumbotron">
+  <h1>Ooops</h1>
+  <p><%= error.message %></p>
+  <!-- <pre><%= error.stack %></pre> -->
+  <p><a class="btn btn-primary btn-lg" href="/" role="button">Zurück zur Anmeldung</a></p>
+</div>
