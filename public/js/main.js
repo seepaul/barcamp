@@ -93,18 +93,19 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
           validName: true
         },
         tag1: {
-          minlength: 3,
+          minlength: 2,
           maxlength: 36,
           required: true,
           tag: true
         },
         tag2: {
-          minlength: 3,
+          minlength: 2,
           maxlength: 36,
           required: true,
           tag: true
         },
         tag3: {
+          minlength: 2,
           required: true,
           maxlength: 36,
           tag: true
@@ -130,6 +131,10 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
           email: true,
           remote: "/check_email"
         },
+        cancel_email: {
+          required: true,
+          email: true
+        },
         session_title: {
           maxlength: 256
         },
@@ -150,22 +155,26 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
         }
       },
       messages: {
-        firstName: "Bitte gib deinen Vornamen an (min. 3 Zeichen)",
-        tag1: "Bitte gib alle drei Tags an (min. 3 Zeichen)",
-        tag2: "Bitte gib alle drei Tags an (min. 3 Zeichen)",
-        tag3: "Bitte gib alle drei Tags an (min. 3 Zeichen)",
+        firstName: "Bitte gib deinen Vornamen an (min. 3 Zeichen, max. 36 Zeichen)",
+        tag1: "Bitte gib alle drei Tags an (min. 3 Zeichen, max. 36 Zeichen)",
+        tag2: "Bitte gib alle drei Tags an (min. 3 Zeichen, max. 36 Zeichen)",
+        tag3: "Bitte gib alle drei Tags an (min. 3 Zeichen, max. 36 Zeichen)",
         accept: "Du musst die BarCamp Graz Charta akzeptieren um teilnehmen zu können",
         email: {
           required: "Bitte gib deine E-Mail Adresse an",
           email: "Deine E-Mail Adresse muss in folgenden Format sein: name@domain.com",
           remote: "Diese E-Mail Adresse wurde bereits verwendet"
+        },
+        cancel_email: {
+          required: "Bitte gib deine E-Mail Adresse an",
+          email: "Deine E-Mail Adresse muss in folgenden Format sein: name@domain.com"
         }
       }
     });
 
     // Only enable Submit button if required fields are filled out
     $('input').on('blur', function () {
-      if ($("#register-form").valid()) {
+      if ($("form").valid()) {
         $('input[type="submit"]').removeAttr('disabled');
       } else {
         $('input[type="submit"]').attr('disabled', 'disabled');
@@ -173,7 +182,7 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
     });
 
     $('input:checkbox').change(function () {
-      if ($("#register-form").valid()) {
+      if ($("form").valid()) {
         $('input[type="submit"]').removeAttr('disabled');
       } else {
         $('input[type="submit"]').attr('disabled', 'disabled');
