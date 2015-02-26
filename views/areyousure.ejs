@@ -1,0 +1,15 @@
+<% layout('layout') -%>
+<% block('title', "BarCamp Graz Abmeldung") %>
+
+<div class="page-header">
+  <h2>Vom BarCamp Graz 2015 abmelden</h2>
+</div>
+
+<div class="jumbotron">
+  <h1>Bist du sicher?</h1>
+  <p>Wir werden deine Anmeldung löschen. Du bist dann nicht mehr für das BarCamp Graz 2015 angemeldet.</p>
+
+  <a href="http://barcamp.seepaul.org/cancel/<%= token %>" class="btn btn-lg btn-danger">Ja, abmelden</a>
+
+  <a class="btn btn-primary btn-lg" href="http://barcamp-graz.at/" role="button">Zurück zur BarCamp Website</a>
+</div>
