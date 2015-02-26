@@ -1,4 +1,4 @@
-{ 
+{
   "general": {
   "Websitename": "Barcamp",
   "mail_contact": "name@mailprovider.com"
@@ -21,7 +21,7 @@
     "appenders": [
         { "type": "console", "category": "console"},
         { "type": "file", "filename": "./barcamp.log", "category": "file" },
-        { "type": "smtp", "recipients": "name@mailprovider.com", "sendinterval": "5", "sender": "noreply@mailprovider.com", "transport": "SMTP", 
+        { "type": "smtp", "recipients": "name@mailprovider.com", "sendinterval": "5", "sender": "noreply@mailprovider.com", "transport": "SMTP",
             "SMTP": {
                 "host": "smtp.mailprovider.com",
                 "secureConnection": false,
@@ -42,6 +42,7 @@
     "secureConnection": false,
     "port": 25,
     "sender": "noreply@barcamp-graz.at",
-    "subjectWelcome": "[BarCamp Graz] Anmeldung"
+    "subjectWelcome": "[BarCamp Graz] Anmeldung",
+    "subjectGoodbye": "[BarCamp Graz] Abmeldung"
   }
 }
