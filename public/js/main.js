@@ -10,7 +10,7 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
     }, "Please use only a-z0-9_-");
 
     jQuery.validator.addMethod("tag", function (value, element) {
-      return this.optional(element) || /^[a-zA-Z0-9_\-]+$/i.test(value);
+      return this.optional(element) || /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð0-9_\-]+$/i.test(value);
     }, "Please use only a-zA-Z0-9_- ");
 
     jQuery.validator.addMethod("validName", function (value, element) {
