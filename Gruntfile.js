@@ -39,6 +39,7 @@ module.exports = function(grunt) {
         command : 'cp ./barcamp-server.js ./build/barcamp-server.js &&\n\
                    cp -r ./config ./build &&\n\
                    cp -r ./public/images ./build/public &&\n\
+                   cp ./public/favicon.ico ./build/public &&\n\
                    cp ./htaccess.conf ./build &&\n\
                    cp ./node_debian_init.sh ./build &&\n\
                    cp ./package.json ./build &&\n\
