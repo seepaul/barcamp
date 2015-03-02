@@ -6,6 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+<script>
+
+    var testwords = [
+     {text: "Lorem", weight: 130},
+      {text: "Ipsum", weight: 100.5},
+      {text: "Dolor", weight: 90.4},
+      {text: "Sit", weight: 80},
+      {text: "Amet", weight: 60.2},
+      {text: "Consectetur", weight: 50},
+      {text: "Adipiscing", weight: 50},
+      {text: "1Lorem", weight: 63},
+      {text: "1Ipsum", weight: 60.5},
+      {text: "1Dolor", weight: 59.4},
+      {text: "1Sit", weight: 58},
+      {text: "1Amet", weight: 56.2},
+      {text: "1Consectetur", weight: 55},
+      {text: "1Adipiscing", weight: 55},
+      {text: "2Lorem", weight: 43},
+      {text: "2Ipsum", weight: 40.5},
+      {text: "2Dolor", weight: 39.4},
+      {text: "2Sit", weight: 38},
+      {text: "2Amet", weight: 36.2},
+      {text: "2Consectetur", weight: 35},
+      {text: "2Adipiscing", weight: 35},
+      {text: "3Lorem", weight: 23},
+      {text: "3Ipsum", weight: 20.5},
+      {text: "3Dolor", weight: 19.4},
+      {text: "3Sit", weight: 18},
+      {text: "3Amet", weight: 16.2},
+      {text: "3Consectetur", weight: 15},
+      {text: "3Adipiscing", weight: 15},
+      {text: "4Lorem", weight: 13},
+      {text: "4Ipsum", weight: 10.5},
+      {text: "4Dolor", weight: 9.4},
+      {text: "4Sit", weight: 8},
+      {text: "4Amet", weight: 6.2},
+      {text: "4Consectetur", weight: 5},
+      {text: "4Adipiscing", weight: 5},
+      {text: "5Lorem", weight: 7.5},
+      {text: "5Ipsum", weight: 5.25},
+      {text: "5Dolor", weight: 4.7},
+      {text: "5Sit", weight: 4},
+      {text: "5Amet", weight: 3.1},
+      {text: "5Consectetur", weight: 2.5},
+      {text: "5Adipiscing", weight: 2.5},
+      
+    ];
+    
+    var words = [
+    <% for(var i=0; i<tags.length; i++) {%>
+       {text:"<%= tags[i].name%>", weight:"<%= tags[i].count%> "},
+    <% } %>
+    ];
+    
+</script>
 
     <title>Barcamp Tagcloud<% if(stagingEnvironment()) { %> (staging)<% } else if(developmentEnvironment()) { %> (development)<% } %></title>
 
@@ -16,14 +71,20 @@
 <% } else { %>
   <link rel="stylesheet" href="/css/barcamp.min.css">
 <% } %>
+  <link rel="stylesheet" href="/css/jqcloud.css">
   </head>
 
   <body>
   
+    <div id="tagcloud" style="position:absolute; top:10px; left:0px; right: 0px; min-height:200px; height:100vh;
+    padding:10px">
+    </div>
+<!--
   <ul id="tagcloud">
 <% for(var i=0; i<tags.length; i++) {%>
    <li value="<%= tags[i].count %>" title="<%= tags[i].name %> "><%= tags[i].name %></li>
 <% } %>
+-->
 <!--
     <li value="140" title="design ">design</li>
     <li value="138" title="blog ">blog</li>

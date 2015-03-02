@@ -1,6 +1,6 @@
 /*jslint unparam:true*/
 /*global debug:true*/
-require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jquery.tagcloud.min'], function ($) {
+require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jquery.tagcloud.min', 'vendor/jqcloud'], function ($) {
   'use strict';
 
   $(document).ready(function () {
@@ -190,12 +190,21 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
     });
 
     // TODO Still breaks JQuery
-    $("#tagcloud").width($(window).width() - 100);
-    $("#tagcloud").tagcloud({
-      height: $(window).height() - 100,
-      sizemax: 100,
-      type: 'sphere'
-    });
+    if(typeof words != undefined) {
+      $('#tagcloud').jQCloud(words, {
+        colors: ["#C01AC0", "#922292", "#922292", "#6F256F", "#6F256F", "#6F256F", "#4B204B", "#4B204B", "#271527"],
+        fontSize: {
+          from: 0.1,
+          to: 0.02
+        }
+      });
+    }
+    //$("#tagcloud").width($(window).width() - 100);
+    //$("#tagcloud").tagcloud({
+    //  height: $(window).height() - 100,
+    //  sizemax: 100,
+    //  type: 'sphere'
+    //});
 
   });
 });
