@@ -152,6 +152,12 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
         },
         website: {
           url: true
+        },
+        accept: {
+          required: true
+        },
+        help: {
+          required: true
         }
       },
       messages: {
@@ -160,6 +166,7 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
         tag2: "Bitte gib alle drei Tags an (min. 3 Zeichen, max. 36 Zeichen)",
         tag3: "Bitte gib alle drei Tags an (min. 3 Zeichen, max. 36 Zeichen)",
         accept: "Du musst die BarCamp Graz Charta akzeptieren um teilnehmen zu können",
+        help: "Du musst das BarCamp Prinzip akzeptieren um teilnehmen zu können",
         email: {
           required: "Bitte gib deine E-Mail Adresse an",
           email: "Deine E-Mail Adresse muss in folgenden Format sein: name@domain.com",
@@ -194,7 +201,9 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
     $("#tagcloud").tagcloud({
       height: $(window).height() - 100,
       sizemax: 100,
-      type: 'sphere'
+      type: 'sphere',
+      colormax: "0000ff",
+      colormin: "8fa6ca"
     });
 
   });
