@@ -21,7 +21,11 @@
       <tr>
         <th scope="row"><%= i + 1 %></th>
         <td><%= u.getFullname() %></td>
-        <td><%= u.preferredCamp %></td>
+        <td>
+        <% if (u.preferredCamp != "none") { %>
+          <%= u.preferredCamp %>
+        <% } %>
+        </td>
         <td>
           <% if (u.twitter) { %> <a href="https://twitter.com/<%= u.twitter %>" target="_blank"><i class="fa fa-twitter-square"></i></a> <% } %>
           <% if (u.facebook) { %> <a href="https://www.facebook.com/<%= u.facebook %>" target="_blank"><i class="fa fa-facebook-square"></i></a> <% } %>
