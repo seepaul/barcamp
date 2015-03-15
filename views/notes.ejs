@@ -1,0 +1,19 @@
+<% layout('layout') -%>
+<% block('title', "BarCamp Graz Sessionvorschläge") %>
+
+<h2>Anmerkungen - BCG 2015</h2>
+
+<% users.forEach(function(u, i) { %>
+
+  <% if (u.note) { %>
+
+    <div>
+      <p><b style="color:#222"><%= u.getFullname() %></b></p>
+      <p><%= u.note %></p>
+    </div>
+
+    <hr>
+
+  <% } %>
+
+<% }); %>

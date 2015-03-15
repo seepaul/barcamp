@@ -1,0 +1,49 @@
+<% layout('layout') -%>
+<% block('title', "BarCamp Graz Statistik") %>
+
+<h2>Statistik - Anmeldung BCG 2015</h2>
+<p>Anzahl angemeldete TeilnehmerInnen: <b style="color:#222"><%= statistics['registered'] %></b></p>
+
+<h3>Camps</h3>
+
+<p>Kein bevorzugtes Camp: <%= statistics['camp_none'] %> (<%= ((statistics['camp_none'] / statistics['registered']) * 100).toFixed(2) %> %)<br>
+UXCamp: <%= statistics['camp_uxcamp'] %> (<%= ((statistics['camp_uxcamp'] / statistics['registered']) * 100).toFixed(2) %> %)<br>
+PolitCamp: <%= statistics['camp_politcamp'] %> (<%= ((statistics['camp_politcamp'] / statistics['registered']) * 100).toFixed(2) %> %)<br>
+StartCamp: <%= statistics['camp_startcamp'] %> (<%= ((statistics['camp_startcamp'] / statistics['registered']) * 100).toFixed(2) %> %)<br>
+DesignCamp: <%= statistics['camp_designcamp'] %> (<%= ((statistics['camp_designcamp'] / statistics['registered']) * 100).toFixed(2) %> %)<br>
+AppDevCamp: <%= statistics['camp_appdevcamp'] %> (<%= ((statistics['camp_appdevcamp'] / statistics['registered']) * 100).toFixed(2) %> %)<br>
+WissensCamp: <%= statistics['camp_wissenscamp'] %> (<%= ((statistics['camp_wissenscamp'] / statistics['registered']) * 100).toFixed(2) %> %)</p>
+
+<h3>Newcomer</h3>
+
+<p><%= statistics['newcomer_yes'] %> Newcomer von <%= statistics['registered'] %> TeilnehmerInnen (<%= ((statistics['newcomer_yes'] / statistics['registered']) * 100).toFixed(2) %> %)</p>
+
+<h3>Ohne Nachname</h3>
+
+<p><%= statistics['lastname_no'] %> ohne Nachnamen von <%= statistics['registered'] %> TeilnehmerInnen (<%= ((statistics['lastname_no'] / statistics['registered']) * 100).toFixed(2) %> %)</p>
+
+<h3>T-Shirts</h3>
+
+<p>Herren</p>
+
+<p>S <%= statistics['men_s'] %><br>
+M <%= statistics['men_m'] %><br>
+L <%= statistics['men_l'] %><br>
+XL <%= statistics['men_xl'] %></p>
+
+<p>Damen</p>
+
+<p>S <%= statistics['women_s'] %><br>
+M <%= statistics['women_m'] %><br>
+L <%= statistics['women_l'] %><br>
+XL <%= statistics['women_xl'] %></p>
+
+<h3>Tagesverteilung</h3>
+
+<p>Freitag, 17. April: <%= statistics['attending_day_1'] %><br>
+Samstag, 18. April: <%= statistics['attending_day_2'] %><br>
+Sonntag, 19. April: <%= statistics['attending_day_3'] %></p>
+
+<h3>Kinderbetreuung</h3>
+
+<p><%= statistics['children_yes'] %> Kinderbetreuung von <%= statistics['registered'] %> TeilnehmerInnen (<%= ((statistics['children_yes'] / statistics['registered']) * 100).toFixed(2) %> %)</p>
