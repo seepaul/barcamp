@@ -29,7 +29,7 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
           minlength: 3,
           maxlength: 15,
           required: true,
-          lettersonly: true
+          lettersonly: false
         }
       },
       highlight: function (element) {
