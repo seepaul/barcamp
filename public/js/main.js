@@ -180,7 +180,7 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
     });
 
     // Only enable Submit button if required fields are filled out
-    $('input').on('blur', function () {
+    $('input').on('keyup', function () {
       if ($("form").valid()) {
         $('input[type="submit"]').removeAttr('disabled');
       } else {
@@ -188,7 +188,7 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
       }
     });
 
-    $('input:checkbox').change(function () {
+    $('input').change(function () {
       if ($("form").valid()) {
         $('input[type="submit"]').removeAttr('disabled');
       } else {
