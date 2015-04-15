@@ -198,12 +198,26 @@ require(['jquery', 'vendor/jquery.validate.min', 'vendor/bootstrap', 'vendor/jqu
 
     // TODO Still breaks JQuery
     $("#tagcloud").width($(window).width() - 100);
+
     $("#tagcloud").tagcloud({
       height: $(window).height() - 100,
-      sizemax: 100,
+      sizemax: 35,
+      sizemin: 15,
       type: 'sphere',
-      colormax: "0000ff",
-      colormin: "8fa6ca"
+      colormax: "00f",
+      colormin: "8fa6ca",
+      power: 0.35
+    });
+
+    $("#reminder-form").validate({
+      rules: {
+        text: {
+          required: true
+        },
+        links: {
+          required: false
+        }
+      }
     });
 
   });

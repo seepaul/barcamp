@@ -21,30 +21,11 @@
   <body>
   
   <ul id="tagcloud">
+
 <% for(var i=0; i<tags.length; i++) {%>
    <li value="<%= tags[i].count %>" title="<%= tags[i].name %> "><%= tags[i].name %></li>
 <% } %>
-<!--
-    <li value="140" title="design ">design</li>
-    <li value="138" title="blog ">blog</li>
-    <li value="136" title="programming ">programming</li>
-    <li value="134" title="tools ">tools</li>
-    <li value="132" title="music ">music</li>
-    <li value="130" title="software ">software</li>
-    <li value="128" title="webdesign ">webdesign</li>
-    <li value="126" title="web2.0 ">web2.0</li>
-    <li value="124" title="video ">video</li>
-    <li value="100" title="art ">art</li>
-    <li value="80" title="ajax ">art</li>
-    <li value="60" title="tagcloud ">art</li>
-    <li value="56" title="rest ">art</li>
-    <li value="20" title="graz ">art</li>
-    <li value="80" title="javascript ">art</li>
-    <li value="10" title="js ">art</li>
-    <li value="10" title="art ">art</li>
-    <li value="10" title="art ">art</li>
-    <li value="10" title="art ">art</li>
-    <li value="10" title="art ">art</li> -->
+
   </ul>
 	
     <% if(developmentEnvironment()) { %>

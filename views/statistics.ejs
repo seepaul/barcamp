@@ -48,6 +48,39 @@ Sonntag, 19. April: <%= statistics['attending_day_3'] %></p>
 
 <p><%= statistics['children_yes'] %> Kinderbetreuung von <%= statistics['registered'] %> TeilnehmerInnen (<%= ((statistics['children_yes'] / statistics['registered']) * 100).toFixed(2) %> %)</p>
 
+<h3>Nametag CSV</h3>
+
 <p>
  In der <a href="/nametag.csv">NameTag CSV Liste</a> befinden sich die notwendigen Informationen, um die Nametags vorzudrucken.
 </p>
+
+<h3>Reminder Email</h3>
+
+<form novalidate="novalidate" id="reminder-form" method="POST" action="/reminder">
+
+  <div class="form-group">
+    <label for="session_desc">Betreff</label>
+    <input type="text" class="form-control" id="subject" name="subject">
+  </div>
+
+  <div class="form-group">
+    <textarea class="form-control" id="text" name="text"></textarea>
+  </div>
+
+  <div class="checkbox">
+    <label>
+      <input id="links" name="links" type="checkbox" value="true"> <span>Liste mit Links zum Abmelden der Email hinzufügen</span>
+    </label>
+  </div>
+
+  <div class="checkbox">
+    <label>
+      <input id="testmail" name="testmail" type="checkbox" value="true"> <span>Testmail</span>
+    </label>
+  </div>
+
+  <div class="form-actions" style="margin-top:40px">
+    <input id="remind" class="btn btn-large btn-success" value="Reminder ausschicken" type="submit" style="height:50px" disabled="disabled">
+  </div>
+</form>
+
