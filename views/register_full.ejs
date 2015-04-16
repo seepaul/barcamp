@@ -1,0 +1,255 @@
+<% layout('layout') -%>
+<% block('title', "BarCamp Graz Anmeldung") %>
+
+<h2>Anmeldung zum BarCamp Graz 2015</h2>
+<h3 style="color:#888; margin:0 0 20px 0;">17.-19. April an der FH Joanneum Graz</h3>
+
+<p><b style="color:#222">Was ist ein BarCamp?</b> Schau dir einfach dieses <a href="https://vimeo.com/66069620" target="_blank">Video</a> an oder informiere dich auf der <a href="http://barcamp-graz.at" target="_blank">BarCamp Graz</a> Website.</p>
+
+<p><b style="color:#222">Warum anmelden?</b> Da wir für alle BesucherInnen ein kostenloses Buffet, Getränke und T-Shirts anbieten wollen, möchten wir im Vorhinein wissen, wie viele BesucherInnen zum BarCamp Graz kommen werden. Das erleichtert nicht nur uns die Organisation, sondern bringt auch Dir die beste BarCamp Experience.</p>
+
+<p><b style="color:#222">Was passiert mit meinen Daten?</b> Alle Daten werden ausschließlich für die Anmeldung und Verbesserung des BarCamp Graz verwendet. Bitte sei Dir bewusst, dass Deine Anmeldung auf unserer <a href="/list" target="_blank">Teilnehmer</a> Seite aufscheinen wird. Deine <b style="color:#222">E-Mail Adresse</b> wird nicht veröffentlicht.</p>
+
+<p><span class="required"><b>*</b></span> kennzeichnet Pflichtfelder</p>
+
+
+<form novalidate="novalidate" id="register-form" method="POST" action="/register">
+
+  <h3>Persönliche Informationen</h3>
+
+  <p>Jede/r BesucherIn bekommt von uns ein Namensschild mit seinem Vor- und Nachnamen drauf. So können sich alle viel schneller kennenlernen.<br><b style="color:#333">Deine E-Mail Adresse wird vertraulich behandelt und nicht veröffentlicht.</b></p>
+  <div style="margin-top:40px"></div>
+
+  <div class="form-group">
+    <label for="email">E-Mail Adresse <span class="required">*</span></label>
+    <input class="form-control" id="email" name="email" value="" type="text" required>
+  </div>
+
+  <div class="form-group">
+    <label for="firstName">Vorname oder Spitzname <span class="required">*</span></label>
+    <input class="form-control" id="firstName" name="firstName" value="" type="text" required>
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Nachname</label>
+    <input class="form-control" id="lastName" name="lastName" value="" type="text">
+  </div>
+
+  <hr style="margin-top:40px"/>
+
+  <h3>Dein bevorzugtes Camp</h3>
+
+  <p>Bitte gib uns an, welches Camp Du gerne primär besuchen würdest. So können wir die Raumeinteilung einfacher gestalten.<br><b style="color:#222">Selbstverständlich kannst Du an jedem der Camps teilnehmen und jederzeit wechseln.</b></p>
+  <div style="margin-top:40px"></div>
+
+  <div class="form-group">
+    <label for="preferredCamp">Bevorzugtes Camp</label>
+    <select id="preferredCamp" name="preferredCamp" class="form-control">
+      <option value="none">kein bestimmtes Camp</option>
+      <option value="appdevcamp">appdevcamp</option>
+      <option value="designcamp">designcamp</option>
+      <option value="politcamp">politcamp</option>
+      <option value="startcamp">startcamp</option>
+      <option value="uxcamp">uxcamp</option>
+      <option value="wissenscamp">wissenscamp</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="newcomer">Ist es Dein erstes BarCamp?</label>
+    <p>Um Neulingen einen besonders guten Start bieten zu können, würden wir gerne wissen, ob Du zum ersten Mal bei einem BarCamp zu Besuch bist.</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input id="newcomer" name="newcomer" type="checkbox" value="true"> Ja, dies ist mein erstes BarCamp
+    </label>
+  </div>
+
+  <hr style="margin:40px 0"/>
+
+  <h3>Deine drei "Tags"</h3>
+
+  <p>Ein Tag (dt. "Etikett", sprich: Täg) ist eine Ein-Wort-Beschreibung von Dir. Alle BesucherInnen tragen drei Tags auf ihren Namensschildern.<br>Das sind meistens die drei Dinge, die sie am meisten interessieren.</p>
+  <p>Bitte gib einen Tag als einzelnes Wort an. Wenn dein Tag aus zwei oder mehreren Wörtern besteht, verbinde sie einfach mit einem Bindestrich! z.B. User-Experience</p>
+
+  <p><b style="color:#222">Beispiele</b> für Tags sind: Web-Entwicklung, Basisdemokratie, Gründen, Photoshop, Wissensmanagement</p>
+
+  <p>Wir sammeln auch alle Tags in einer <a href="/tagcloud" target="_blank">TagCloud</a> um zu sehen, was dieses Jahr besonders oft gewählt wurde.</p>
+
+  <div style="margin-top:40px"></div>
+
+  <div class="form-group">
+    <label for="tag1">Tag 1 <span class="required">*</span></label>
+    <input class="form-control" id="tag1" name="tag1" value="" type="text">
+  </div>
+
+  <div class="form-group">
+    <label for="tag2">Tag 2 <span class="required">*</span></label>
+    <input class="form-control" id="tag2" name="tag2" value="" type="text">
+  </div>
+
+  <div class="form-group">
+    <label for="tag3">Tag 3 <span class="required">*</span></label>
+    <input class="form-control" id="tag3" name="tag3" value="" type="text">
+  </div>
+
+  <hr style="margin:40px 0">
+
+  <h3>Du kommst am...</h3>
+
+  <p>Das BarCamp Graz findet dieses Jahr vom 17.-19. April an der FH Joanneum Graz statt.<br>Damit wir wissen, wie viele Getränke und Snacks wir bereitstellen müssen, wäre es uns eine große Hilfe, wenn Du uns sagen würdest, ob Du an allen drei Tagen teilnehmen kannst.</p>
+
+
+  <div class="clearfix"></div>
+
+  <div class="form-group" style="margin: 0 0 20px 20px;">
+    <label class="checkbox" style="font-weight:normal !important;">
+      <input type="checkbox" name="day_one" id="day_one" value="true" checked="true"> Freitag (17. April)
+    </label>
+
+    <label class="checkbox" style="font-weight:normal !important;">
+      <input type="checkbox" name="day_two" id="day_two" value="true" checked="true"> Samstag (18. April)
+    </label>
+
+    <label class="checkbox" style="font-weight:normal !important;">
+      <input type="checkbox" name="day_three" id="day_three" value="true" checked="true"> Sonntag (19. April)
+    </label>
+  </div>
+
+
+  <hr style="margin:40px 0"/>
+
+
+
+  <h3>T-Shirt</h3>
+
+  <div class="form-group">
+    <p>Unsere TeilnehmerInnen bekommen jeweils ein T-Shirt von uns. Damit wir auch Deine Größe vorrätig haben, bitten wir Dich, Deine T-Shirt Größe anzugeben.<br>T-Shirts erhältlich so lange der Vorrat reicht.</p>
+
+    <select id="gender" name="gender" class="form-control">
+      <option value="none">Geschlecht</option>
+      <option value="w">weiblich</option>
+      <option value="m">männlich</option>
+    </select>
+
+    <select id="shirtSize" name="shirtSize" class="form-control" style="margin-top:30px">
+      <option value="none">Kein T-Shirt</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+  </div>
+
+  <hr style="margin:40px 0"/>
+
+  <h3>Dein Session-Vorschlag</h3>
+
+  <p>Hier kannst Du Dir wünschen, welche Session du gerne am BarCamp selbst halten oder sehen möchtest.<br>Allerdings können wir dir nicht garantieren, ob es deine Session ins Programm schaffen wird.<br>Je mehr Mühe Du Dir hier gibst, desto wahrscheinlicher wird es auch was :)</p>
+  <div style="margin-top:40px"></div>
+
+  <div class="form-group">
+    <label for="session_title">Titel der Session</label>
+    <input class="form-control" id="session_title" name="session_title" value="" type="text">
+  </div>
+
+  <div class="form-group">
+    <label for="session_desc">Beschreibung der Session</label>
+    <textarea class="form-control" id="session_desc" name="session_desc"></textarea>
+  </div>
+
+
+  <hr style="margin:40px 0">
+
+  <h3>Kinderbetreuung</h3>
+
+  <p>Wir bieten jedes Jahr Kinderbetreuung am BarCamp Graz an. Bitte gib hier an, ob Du die Kinderbetreuung für Deine Kinder in Anspruch nehmen möchtest.</p>
+
+  <div class="checkbox">
+    <label>
+      <input id="children" name="children" type="checkbox" value="true"> Ja, ich möchte für meine Kinder die BarCamp Graz Kinderbetreuung in Anspruch nehmen
+    </label>
+  </div>
+
+  <hr style="margin:40px 0"/>
+
+  <h3>Social Media</h3>
+  <p>Hier kannst du Links zu deinen Social Media Accounts oder deiner persönlichen Website angeben. Die Links werden nach deiner Anmeldung unter <a href="/list" target="_blank">Teilnehmer</a> einsehbar sein und sollen dir helfen, dich leichter mit den anderen TeilnehmerInnen zu vernetzen.</p>
+
+  <div class="form-group">
+    <label for="twitter">Twitter</label>
+
+    <div class="media">
+      <div class="media-left">
+        <p class="presocial">https://twitter.com/</p>
+      </div>
+      <div class="media-body">
+        <input class="form-control" id="twitter" name="twitter" value="" type="text" placeholder="maxmuster">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="facebook">Facebook</label>
+
+    <div class="media">
+      <div class="media-left">
+        <p class="presocial">https://www.facebook.com/</p>
+      </div>
+      <div class="media-body">
+        <input class="form-control" id="facebook" name="facebook" value="" type="text" placeholder="erika.musterfrau">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="google_plus">Google Plus</label>
+
+    <div class="media">
+      <div class="media-left">
+        <p class="presocial">https://plus.google.com/+</p>
+      </div>
+      <div class="media-body">
+        <input class="form-control" id="google_plus" name="google_plus" value="" type="text" placeholder="MaxMustermann">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="website">Website / Blog</label>
+    <input class="form-control" id="website" name="website" value="" type="text" placeholder="zB.: http://barcamp-graz.at/">
+  </div>
+
+  <hr style="margin:40px 0"/>
+
+  <h3>Anmerkungen</h3>
+
+  <p>Hier hast Du die Möglichkeit noch etwas zu Deiner Anmeldung anzumerken (oder Anregungen, Beschwerden und Bedenken loszuwerden).</p>
+
+  <div class="form-group">
+    <textarea class="form-control" id="note" name="note"></textarea>
+  </div>
+
+  <div style="margin-top:40px"></div>
+
+  <div class="checkbox">
+    <label>
+      <input id="accept" name="accept" type="checkbox" value="true" required> <span>Ich akzeptiere die <a href="http://barcamp-graz.at/information/charta/" target="_blank">BarCamp Graz Charta</a> <span class="required"><b>*</b></span></span>
+    </label>
+  </div>
+
+  <div class="checkbox">
+    <label>
+      <input id="help" name="help" type="checkbox" value="true" required> <span>Ich nehme am BarCamp Graz teil und versuche auch über die Sessions hinaus am BarCamp beizutragen (z.B. Gestaltung der Räume, Aufräumen) <span class="required"><b>*</b></span></span>
+    </label>
+  </div>
+
+  <div class="form-actions" style="margin-top:40px">
+    <input id="register" class="btn btn-large btn-success" value="Zum BarCamp Graz anmelden" type="submit" style="height:50px" disabled="disabled">
+    <a class="btn" href="http://barcamp-graz.at/">Nicht anmelden und zurück zur BarCamp Graz Website</a>
+  </div>
+
+  <p style="margin-top:40px"><b style="color:#222">Probleme oder Fragen zur Anmeldung?</b> E-Mail an <a href="mailto:&#106;&#117;&#101;&#114;&#103;&#101;&#110;&#064;&#098;&#097;&#114;&#099;&#097;&#109;&#112;&#045;&#103;&#114;&#097;&#122;&#046;&#097;&#116;">&#106;&#117;&#101;&#114;&#103;&#101;&#110;&#064;&#098;&#097;&#114;&#099;&#097;&#109;&#112;&#045;&#103;&#114;&#097;&#122;&#046;&#097;&#116;</a></p>
+
+
+</form>
